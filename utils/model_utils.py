@@ -64,17 +64,7 @@ class MultiModalMultiLabelModel(torch.nn.Module):
         self.sentiment_head = torch.nn.Linear(config.CA_HIDDEN_SIZE, config.SENTIMENT_CLASSES)
 
     def forward(self, input_ids, attention_mask, pixel_values):
-        """
-        前向传播函数
 
-        Args:
-            input_ids: 文本输入的张量
-            attention_mask: 文本注意力掩码
-            pixel_values: 图像输入的张量
-
-        Returns:
-            字典，包含各个情感标签的预测
-        """
         # 文本编码
         text_outputs = self.text_encoder(
             input_ids=input_ids,
@@ -156,11 +146,6 @@ class ModelPredictor:
     def predict(self, image_array, text):
         """
         使用模型预测图像的情感标签
-
-        Args:
-            image_array: numpy数组形式的图像
-            text: 从图像中提取的文本
-
         Returns:
             预测结果字典
         """

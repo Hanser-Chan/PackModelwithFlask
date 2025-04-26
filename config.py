@@ -6,7 +6,7 @@ class Config:
     SEED = 101
     MODEL_NAME = "vit-sbert-multimodal-multilabel"
 
-    # 路径配置 - 请根据实际情况修改
+    # 路径配置
     MODEL_PATH = os.path.join(os.path.dirname(__file__), "models", "best_epoch-fold00.bin")
 
     # 编码器配置
@@ -29,7 +29,7 @@ class Config:
     MOTIVATIONAL_CLASSES = 2 # not_motivational, motivational
     SENTIMENT_CLASSES = 5    # very_negative, negative, neutral, positive, very_positive
 
-    # 标签映射（反向映射，用于输出结果）
+    # 标签映射
     HUMOUR_MAP_REVERSE = {0: 'not_funny', 1: 'funny', 2: 'very_funny', 3: 'hilarious'}
     SARCASM_MAP_REVERSE = {0: 'not_sarcastic', 1: 'general', 2: 'twisted_meaning', 3: 'very_twisted'}
     OFFENSIVE_MAP_REVERSE = {0: 'not_offensive', 1: 'slight', 2: 'very_offensive'}

@@ -2,10 +2,7 @@ import numpy as np
 from paddleocr import PaddleOCR
 
 class OcrProcessor:
-    """
-    OCR处理器类
-    单例模式，确保OCR引擎只初始化一次
-    """
+
     _instance = None
 
     def __new__(cls, config):
@@ -22,10 +19,6 @@ class OcrProcessor:
     def extract_text(self, image):
         """
         从图像中提取文本
-
-        Args:
-            image: numpy数组形式的图像
-
         Returns:
             提取的文本字符串，提取失败则返回空字符串
         """
