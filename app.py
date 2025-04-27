@@ -6,7 +6,6 @@ import os
 import time
 import uuid
 
-# 导入自定义模块
 from config import Config
 from utils.model_utils import ModelPredictor
 from utils.ocr_utils import OcrProcessor
