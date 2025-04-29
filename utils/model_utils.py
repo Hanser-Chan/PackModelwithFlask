@@ -195,7 +195,8 @@ class ModelPredictor:
             class_probs = {class_map[i]: float(probs[i]) for i in range(len(probs))}
 
             predictions[label_name] = {
-                'class': class_name,
+                # 原来这里是class，但使用Springboot不能很好获取(关键字)，这里改成clazz
+                'clazz': class_name,
                 'confidence': float(probs[pred_class]),
                 'probabilities': class_probs
             }
